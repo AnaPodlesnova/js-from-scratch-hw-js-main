@@ -9,11 +9,8 @@
 
 let dice1 =  Math.round (Math.random() * 5)// your code
 let dice2 =  Math.round (Math.random() * 5)// your code
-let isWinningDouble // your code
+let isWinningDouble = dice1 === dice2// your code
 
-if(dice1 === dice2){
-  isWinningDouble = true
-}
 
 console.log('Первый бросок: ' + dice1)
 console.log('Второй бросок: ' + dice2)
