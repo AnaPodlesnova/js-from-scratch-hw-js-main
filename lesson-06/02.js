@@ -45,23 +45,23 @@ const bouquet = [
   }
 ]
 
-const filterCheapBouquet =  (flowers, callback) => {
-  const filtred =[];
-  for (let i = 0; i < flowers.length; i++) {
-  const flower = flowers[i]
-  
-  if (callback(flower)) {
-    filtred.push(flower)
+function map(flower, callback) {
+  const newArray = []
+
+  for (let i = 0; i < flower.length; i++) {
+    const element = flower[i];
+    const index = i;
+    
+
+    const newBouquet = callback(element, index)
+
+    newArray.push(newBouquet)
   }
-}
-return filtred 
+  return newArray
 }
 
-const CheapBouquet = filterCheapBouquet(bouquet, (flower) => {
-return flower.price <= 100
+const result = map(bouquet, (element, index) => {
+  return element.price
 })
-
-const result = CheapBouquet.map((flower) => {return flower.flowers}
-)
 
 console.log(result);
