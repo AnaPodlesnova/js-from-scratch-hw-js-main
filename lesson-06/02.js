@@ -24,4 +24,44 @@ const doubledNumbers = map(numbers, (element, index) => {
 console.log(doubledNumbers) // Должен вывести: [2, 4, 6, 8, 10]
 */
 
-const map = () => {}
+const bouquet = [ 
+  {
+    flowers : 'Roses',
+    quantity: 5,
+    price : 100,
+    inStock: true
+  },
+    {
+    flowers : 'Iris',
+    quantity: 7,
+    price : 200,
+    inStock: true
+  },
+    {
+    flowers : 'Lavender',
+    quantity: 3,
+    price : 60,
+    inStock: false
+  }
+]
+
+const filterCheapBouquet =  (flowers, callback) => {
+  const filtred =[];
+  for (let i = 0; i < flowers.length; i++) {
+  const flower = flowers[i]
+  
+  if (callback(flower)) {
+    filtred.push(flower)
+  }
+}
+return filtred 
+}
+
+const CheapBouquet = filterCheapBouquet(bouquet, (flower) => {
+return flower.price <= 100
+})
+
+const result = CheapBouquet.map((flower) => {return flower.flowers}
+)
+
+console.log(result);
