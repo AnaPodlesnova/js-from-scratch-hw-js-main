@@ -22,5 +22,31 @@ const oddNumbers = filter(numbers, (element, index) => {
 
 console.log(oddNumbers) // Должен вывести: [1, 3, 5]
 */
+const bouquet = [ 
+  {
+    flowers : 'Roses',
+    quantity: 5,
+    price : 100,
+    inStock: true
+  },
+    {
+    flowers : 'Iris',
+    quantity: 7,
+    price : 200,
+    inStock: true
+  },
+    {
+    flowers : 'Lavender',
+    quantity: 3,
+    price : 60,
+    inStock: false
+  }
+]
 
-const filter = () => {}
+
+
+const findInStock = bouquet.filter((element, index) => {
+  return element.price <= 100
+})
+
+console.log(findInStock);
