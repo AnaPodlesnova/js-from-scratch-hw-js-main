@@ -25,18 +25,18 @@ const nextButton = document.getElementById('next-button')
 let index = 0;
 
 prevButton.addEventListener("click", () => {
-  index --;
+  index--;
 
   if (index < 0) {
     index = WEB_TECH_IMAGES.length -1;
   }
-  slider.src = WEB_TECH_IMAGES[index]
+  slider.src = WEB_TECH_IMAGES[index];
 })
 
 nextButton.addEventListener("click", () => {
   index++;
 
-  if (index > WEB_TECH_IMAGES.length ) {
+  if (index >= WEB_TECH_IMAGES.length ) {
     index = 0
   }
   slider.src = WEB_TECH_IMAGES[index]
